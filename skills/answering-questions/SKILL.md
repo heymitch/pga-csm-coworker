@@ -1,44 +1,53 @@
 ---
 name: answering-questions
-description: Drafts responses to student questions in PGA Slack question channels. Use when students post in #ask-curriculum-questions, #ask-niche-and-content-questions, #ask-tech-questions, #ask-sales-questions, or #ask-logistical-questions.
+description: Writes draft responses to PGA student questions with curriculum links and coaching follow-ups. Use when a student asks a question in Slack or the CSM pastes a question for drafting.
 ---
 
 # Answering Questions
 
-I draft responses to student questions, always pointing back to the curriculum.
+Paste me a student question. I write the response — with the curriculum link already included and a follow-up question that deepens their thinking.
 
-## Workflow
+## What I Need
 
-- [ ] Step 1: Scan question channels for unanswered posts
-- [ ] Step 2: Identify the question category and student's program stage
-- [ ] Step 3: Search curriculum for relevant Module/lesson/FAQ
-- [ ] Step 4: Draft response — answer + curriculum link + follow-up question
-- [ ] Step 5: Queue draft for CSM review
+- The question (pasted or described)
+- Which channel it's from (helps me tailor the response)
+- Student name (optional, for personalization)
 
-## How I Execute
+## What I Produce
 
-### With Slack + Skool Access
-1. Pull unanswered questions from all #ask-* channels
-2. Check student's AirTable status for context
-3. Search Skool curriculum for matching content
-4. Draft response with specific curriculum link
-5. Flag for CSM: "Draft ready for [student] in #ask-[channel]"
+A ready-to-post response:
 
-### Without Full Access (Fallback)
-1. CSM pastes the question
-2. I identify likely curriculum section
-3. Draft response with Module/lesson reference
-4. CSM copies into Slack
+```
+[Acknowledge — 1 sentence]
 
-## Key Rules
+[Answer — 2-3 sentences, concise]
 
-- **Challenge with a question** — don't just give the answer, ask a question that helps them find it
-- **Always include a curriculum link** — Skool classroom links so they see answers live in the program
-- **Redirect DMs** — if someone asks in DM, draft redirect: "Hey! I'm trained to focus on the Slack community channels so everyone benefits. Post this in #ask-[relevant]-questions!"
-- **Don't over-explain** — keep responses concise, 2-4 sentences + link
-- **Check if already answered** — search the channel for similar recent questions before drafting
+[Curriculum link — specific Module/lesson/FAQ in Skool]
+
+[Challenge question — optional, deepens their thinking]
+```
+
+## Rules I Follow
+
+- **Don't just give the answer** — ask a question that helps them find it themselves
+- **Always include a curriculum link** — Skool classroom link so they see answers live in the program
+- **If it's a DM, draft the redirect instead:** "Hey @[student]! Post this in #ask-[relevant]-questions or your private channel so everyone benefits!"
+- **Keep it tight** — 2-4 sentences + link. Not an essay
+- **Search before drafting** — if this question was recently answered in the channel, reference that thread
+
+## Common Answers I Have Ready
+
+I know the standard responses for:
+- Niche too broad → "List your top 30-50 ideal clients" exercise
+- Which EEC type → Mistakes EEC easiest for beginners
+- Making money fast → Tap current network, offer discount for testimonial
+- Lose access after 16 weeks → Keep Skool/community/clinics, lose 1:1/private channel/team
+- Content strategy → 4 pillars: Reach, Resonance, Revenue, Reality
+- Accountability Trios → Katie manages all Trios, check with her
+
+Full response bank: [playbook.md](playbook.md)
 
 ## References
 
-- Playbook: [playbook.md](playbook.md)
+- Channel-specific guides + response bank: [playbook.md](playbook.md)
 - Resource manifest: [manifest.md](manifest.md)

@@ -1,46 +1,81 @@
 ---
 name: offboarding-students
-description: Manages the progressive Week 10-16 offboarding process and handles cancellation or refund requests for PGA students. Use when students approach their 16-week mark or when a cancellation request comes in.
+description: Drafts week-appropriate offboarding messages and handles cancellation requests following PGA policy. Use when students approach Week 10+ or when a cancellation request comes in.
 ---
 
 # Offboarding Students
 
-I manage the progressive offboarding timeline and handle cancellation requests by the book.
+Tell me a student's name and their week number. I draft the right message for their milestone. Tell me someone wants to cancel and I draft the response with the correct policy.
 
-## Workflow — Offboarding Timeline
+## Offboarding Messages
 
-- [ ] Step 1: Identify students approaching Week 8 (automated Slack triggers awareness)
-- [ ] Step 2: Begin bi-weekly 1:1 reminders at Week 10 — draft check-in copy
-- [ ] Step 3: Continue weekly check-ins (Wk 11, 13 = normal; Wk 12, 14 = normal + weeks-remaining reminder)
-- [ ] Step 4: Week 15-16 — draft closing communications, schedule Business Strategy Call
-- [ ] Step 5: Archive private channel, remove from Team Channel after Week 16
+### What I Need
+- Student name and current week in program
 
-## Workflow — Cancellation Requests
+### What I Produce
 
-- [ ] Step 1: Student requests cancel/refund — determine reason (financial, unhappy, angry)
-- [ ] Step 2: Draft coaching response — offer additional help, 1:1 call with game plan
-- [ ] Step 3: If student won't accept coaching — apply payment threshold rules
-- [ ] Step 4: Confirm with Katie, then draft instructions for Jamie (cancel payments)
-- [ ] Step 5: Handle access removal per threshold ($1700/$3400/$5000 rules)
+**Week 10** — First offboarding-aware check-in:
+```
+Hey @[Student]! [Normal personalized check-in based on their stage]
 
-## How I Execute
+Also, wanted to let you know that you're at Week 10 for the 16 weeks of
+1:1 support. At 16 weeks, you'll still keep full access to Skool, Slack,
+and the Live Clinics but you'll end access to this Private Channel, 1:1
+Calls, our Team Channel, and Hot Seat Spotlight Submissions.
 
-### With AirTable + Slack Access
-Track enrollment dates, auto-calculate week milestones, generate timeline-appropriate messages, flag approaching deadlines.
+I'd love to connect with you around Week 14-15 so we can celebrate
+everything you've accomplished and set some action-based goals moving
+forward! Book here: [Calendly Link]
+```
 
-### Without Full Access (Fallback)
-CSM provides student name and enrollment week. Generate appropriate offboarding messages and checklist.
+**Week 12 & 14** — Reminder integrated into check-in:
+```
+[Personalized check-in] Quick reminder — you've got [X] weeks left of 1:1
+support. Let's make sure we're maximizing our time together. [Specific
+action based on their stage]
+```
+
+**Week 15-16** — Closing communications + Business Strategy Call scheduling
+
+## Cancellation Handling
+
+### What I Need
+- Student name
+- Reason: unhappy/lost confidence, financial hardship, or angry/threatening
+
+### What I Produce
+
+**Step 1 — Coach-back draft (always try first):**
+```
+I hear you, @[Student]. Before we talk about next steps, would you be open
+to a quick 1:1 call? I'd love to create a game plan specifically for your
+situation to help you get to your next milestone.
+```
+
+**Step 2 — If coaching fails, I apply the payment thresholds and tell you:**
+```
+[Student] has paid $[X] total.
+
+Threshold: [below $3,400 / $3,400+ / $5,000+]
+Action:
+- [Remove from Skool + Slack / Pause payments, keep Skool / Pause, keep both]
+- Confirm with Katie
+- Ask Jamie to cancel payments
+- Archive private channel
+
+Draft message to Katie: "..."
+Draft message to Jamie: "..."
+```
 
 ## Key Rules
 
-- **Frame as "1:1 season ending" not "program ending"** — they keep Skool, community channels, and clinics
-- **Never say "failed the program"** — no thriving business cracks the code in 4 months
-- **PGA does not offer refunds** — this is non-negotiable, don't promise otherwise
-- **Follow payment thresholds exactly** — below $3,400 = remove from Skool + Slack; $3,400+ = pause, keep Skool; $5,000+ = keep Skool + Slack
-- **Always confirm cancellation with Katie** before telling Jamie to cancel
-- **If student threatens BBB or bad review** — this is when we consider canceling future payments (not refunding)
+- **"1:1 season ending" not "program ending"** — they keep Skool, community, clinics forever
+- **Never say they failed** — no thriving business cracks the code in 4 months
+- **PGA does not offer refunds. Period.** — I enforce this in every draft
+- **Always confirm cancellation with Katie** before telling Jamie
+- **Threatening students** (BBB, bad review, chargeback) → consider canceling future payments, still no refunds
 
 ## References
 
-- Playbook: [playbook.md](playbook.md)
+- Week-by-week timeline and scripts: [playbook.md](playbook.md)
 - Resource manifest: [manifest.md](manifest.md)

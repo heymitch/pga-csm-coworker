@@ -1,37 +1,61 @@
 ---
 name: updating-student-records
-description: Syncs AirTable student records from Slack activity, keeping CRM stages current as students submit assignments and progress through the program. Use daily to ensure AirTable reflects actual student progress.
+description: Maps student activity to AirTable stage updates and flags data mismatches. Use when telling your coworker about submissions or asking it to reconcile student progress.
 ---
 
 # Updating Student Records
 
-I keep AirTable in sync with reality so you never manually move a student through stages.
+Tell me what your students submitted or did this week. I'll tell you exactly what to update in AirTable — which students, which stages, which fields. If I have AirTable access, I'll do it directly.
 
-## Workflow
+## What I Need
+- Student activity (submissions, calls completed, milestones hit)
+- Or: "reconcile my roster" — I'll compare what I know against expected progress
 
-- [ ] Step 1: Scan #submit-assignment-* channels for new submissions
-- [ ] Step 2: Match student to AirTable record
-- [ ] Step 3: Advance stage (Enrolled → Joined Slack → Booked OB → Assignment 0 → ... → Assignment 9)
-- [ ] Step 4: Flag mismatches (student submitted in Slack but AirTable not updated)
-- [ ] Step 5: Update notes with latest activity date and context
+## What I Produce
 
-## How I Execute
+```
+## AirTable Updates — [Date]
 
-### With AirTable + Slack Access
-Auto-detect submissions, match to student records, advance stages, log activity.
+### Stage Advances
+| Student | From | To | Reason |
+|---------|------|-----|--------|
+| @Sarah | Assignment 2 | Assignment 3 | Submitted EEC in #submit-assignment-3 today |
+| @Marcus | Enrolled | Joined Slack | First message in private channel |
 
-### Without Full Access (Fallback)
-CSM reports submissions. I generate the AirTable updates needed as a checklist.
+### Flags
+⚠️ @Julia — AT shows Assignment 1 but submitted Assignment 3 in Slack.
+   Gap detected — check if Assignment 2 was missed or automation issue.
+   → Flag to Daniel/Jamie if automation problem.
+
+⚠️ @Pat — AT shows Assignment 4 but no submission found in Slack.
+   Possible: submitted via private channel or email issue.
+
+### Notes to Add
+- @David: "EEC launched 2/6. Strong outline, personality present. Watch for client landing."
+- @Kim: "Week 15. Business Strategy Call scheduled 2/14. Liftoff candidate — $4.2K clients landed."
+
+### Referral Tracking
+- @Sarah referred @NewStudent → attribute to Sarah's Student Referral KPI,
+  assign @NewStudent to this CSM roster, 5% UF & AR
+```
+
+## Stage Progression Rules
+
+Students must move in order — I never skip stages:
+```
+Enrolled → Joined Slack → Booked OB Call → Assignment 0 → 1 → 2 → 3 → 4 (EEC!) → 5 → 6 → 7 → 8 → 9 → Offboarding/Liftoff
+```
+
+If a submission appears that skips a stage, I flag the gap instead of advancing.
 
 ## Key Rules
 
-- **Never skip stages** — if a student submits Assignment 3 but AirTable shows them at Assignment 1, flag the gap
-- **Log the date** — every stage change gets a timestamp
-- **Flag stalls to CSM** — if AirTable shows Assignment 2 but it's been 14+ days since last update, flag
-- **Check both Slack and AT** — if AT shows progress but no Slack submission exists, there may be an email/automation issue (flag to Daniel/Jamie)
-- **Referral tracking** — when a student refers someone, attribute in AirTable per referral KPI rules
+- **Exact timestamps** — every stage change gets a date
+- **Flag stalls** — 10+ days on same stage = flagged
+- **Detect mismatches** — AT and Slack should agree, if not I flag
+- **Referral attribution** — I know the referral KPI rules and apply them correctly
 
 ## References
 
-- Playbook: [playbook.md](playbook.md)
+- Full stage progression and detection rules: [playbook.md](playbook.md)
 - Resource manifest: [manifest.md](manifest.md)

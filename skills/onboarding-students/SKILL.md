@@ -1,39 +1,63 @@
 ---
 name: onboarding-students
-description: Manages the 6-step new student onboarding workflow for PGA. Use when a new student notification appears in #pga-sales-dopamine or #pga-student-onboarding.
+description: Produces Welcome Loom scripts and tracks the 6-step onboarding flow for new PGA students. Use when a new student alert appears or when the CSM says "new student."
 ---
 
 # Onboarding Students
 
-I run the 6-step onboarding checklist for every new student so nothing gets missed.
+Tell me a new student's name and what you know about them. I produce the Welcome Loom script, flag deposit/agreement issues, and track the 6-step flow.
 
-## Workflow
+## What I Need
+- Student name
+- Enrollment status: deposit ($1/$500/$1000) or fully enrolled
+- Agreement signed? (if known)
+- Any context from the closer (shared in #pga-sales-dopamine thread)
 
-- [ ] Step 1: Detect new student alert in #pga-sales-dopamine
-- [ ] Step 2: Track #pga-student-onboarding for: Slack joined, private channel created, CSM assigned, Success Path created
-- [ ] Step 3: Generate Welcome Loom script (personalized intro + evergreen steps)
-- [ ] Step 4: Check deposit vs. full enrollment status — flag if deposit >72 hours
-- [ ] Step 5: Check Program Agreement status — flag if unsigned
-- [ ] Step 6: Monitor AirTable for stage progression (Enrolled → Joined Slack → Booked OB → Assignment 0)
+## What I Produce
 
-## How I Execute
+### Welcome Loom Script
+```
+PERSONALIZED INTRO (~30 sec, camera only):
+"Welcome welcome [Name]! We are thrilled to have you on board!
+[One personal connection point if available from closer context].
+Here's a quick welcome video to help you dive right in!"
 
-### With Slack + AirTable Access
-Auto-detect new students, pull enrollment data, generate Loom scripts, track progress through stages, alert if student stalls.
+→ Then attach your evergreen "First 6 Steps" clip via Edit Video → Add Clip
+```
 
-### Without Full Access (Fallback)
-Provide onboarding checklist with student name, prompt CSM for each step completion.
+### Status Flags
+```
+⚠️ DEPOSIT: [Name] is on a $[X] deposit — not fully enrolled.
+   Cannot book 1:1 OB Call until payment plan set up.
+   If 72+ hours on deposit → contact Closer: [closer name]
+
+⚠️ AGREEMENT: [Name] has not signed the Program Agreement.
+   Cannot receive 1:1 coaching until signed.
+   Escalation: Closer first → Jamie Runion (PandaDoc verification)
+
+✅ READY: [Name] is fully enrolled + agreement signed → clear for OB Call
+```
+
+### Onboarding Checklist (I track this)
+```
+- [ ] Detected in #pga-sales-dopamine
+- [ ] Slack joined + private channel created (#pga-student-onboarding confirms)
+- [ ] Assigned to CSM
+- [ ] Custom Success Path created (link in #pga-student-onboarding + AirTable)
+- [ ] Welcome Loom sent → drop 🎥 on sales-dopamine post
+- [ ] Deposit/enrollment status confirmed
+- [ ] Agreement status confirmed
+- [ ] Meet & Greet scheduled (Monday 11AM ET)
+```
 
 ## Key Rules
 
-- **Welcome Loom within 3 hours** — before the Accountability Trio auto-message fires at 6 hours
-- **Batch Looms if 3+ new students** — don't break workflow for each one individually
-- **Drop camera emoji on #pga-sales-dopamine** once Loom is sent
-- **Deposit students can't book 1:1 OB Call** — flag and inform if they try
-- **Agreement must be signed before 1:1 coaching begins** — no exceptions
-- **Watch for rare cases** — some enrollments come through #pga-payments instead of #pga-sales-dopamine
+- **Welcome Loom within 3 hours** — before Accountability Trio message fires at 6 hours
+- **Batch 3+ Looms together** — don't break workflow for each one
+- **Deposit students can't book OB calls** — I always flag this
+- **Watch #pga-payments too** — rare cases come through there instead of #pga-sales-dopamine
 
 ## References
 
-- Playbook: [playbook.md](playbook.md)
+- Full onboarding flow: [playbook.md](playbook.md)
 - Resource manifest: [manifest.md](manifest.md)

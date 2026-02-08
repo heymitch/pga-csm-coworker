@@ -1,38 +1,61 @@
 ---
 name: monitoring-slack-channels
-description: Monitors PGA community and private student channels for posts needing CSM attention. Use for daily channel triage, flagging unanswered posts, celebrating wins, and redirecting DMs.
+description: Triages PGA Slack channel activity and drafts responses for posts needing attention. Use when the CSM pastes channel activity or asks for a channel sweep.
 ---
 
 # Monitoring Slack Channels
 
-I triage all PGA Slack channels so you focus on what needs your attention, not scanning everything.
+Paste me what's happening in your channels — or tell me what's come in — and I'll prioritize it and draft responses for everything that needs one.
 
-## Workflow
+## What I Need
+- Channel activity (paste messages, describe what's new, or I pull via Slack MCP if connected)
+- Which students are yours (so I prioritize your roster)
 
-- [ ] Step 1: Scan community channels (#share-wins, #rising-ghostwriters, #lessons-learned, #social-strategy)
-- [ ] Step 2: Scan private student channels for unanswered messages
-- [ ] Step 3: Flag posts needing CSM response (questions, requests, stalled conversations)
-- [ ] Step 4: Draft celebration responses for #share-wins
-- [ ] Step 5: Draft DM redirects for students messaging in DMs
-- [ ] Step 6: Present triage summary: "X posts need your attention, Y wins to celebrate"
+## What I Produce
 
-## How I Execute
+A prioritized triage with drafted responses:
 
-### With Slack Access
-Auto-scan all channels on priority order (assignments → private → questions → community → DMs). Flag and draft.
+```
+## Slack Triage — [Date]
 
-### Without Slack Access (Fallback)
-CSM reports what they're seeing. I draft responses and suggest priority order.
+### 🔴 Needs Your Response (YOUR students)
+1. **@Sarah in #submit-assignment-3** — new EEC submitted
+   Draft feedback: "[actual feedback text ready to post]"
 
-## Key Rules
+2. **@Marcus in private channel** — asking about outreach schedule
+   Draft response: "[actual response ready to post]"
 
-- **Priority order matters** — assignments first, then private channels, then questions, then community, then DMs
-- **Never answer DMs** — always redirect to private channel
-- **Redirect template:** "Hey @[student]! I'm trained to focus on the Slack community channels. Post this in your private channel or #ask-[relevant]-questions so everyone can benefit!"
-- **Celebrate wins quickly** — a congrats in #share-wins costs nothing and means everything
-- **Star important channels** — keep assignment channels and private channels at the top
+### 🟡 Needs Response (any student)
+3. **@Alex in #ask-sales-questions** — pricing question
+   Draft response: "[actual response ready to post]"
+
+### 🟢 Celebrate
+4. **@David in #share-wins** — landed first client!
+   Draft: "Let's GO @David!! 🔥 That's what happens when you trust
+   the outreach process. Huge congrats — tell us everything!"
+
+### ⚠️ Flags
+- @Julia hasn't posted in 8 days — draft check-in ready above
+- @Pat DM'd you — redirect draft: "Hey @Pat! Drop this in your
+  private channel so the whole team can help!"
+```
+
+## Priority Order
+
+I follow this exact order (matches PGA CSM time management):
+1. Assignment submissions (your students first)
+2. Private channel messages (unanswered)
+3. Question channels (all students)
+4. Community channels (wins, lessons)
+5. DMs (always redirect, never answer)
+
+## Rules I Follow
+- **Every flagged post gets a drafted response** — not just "this needs attention"
+- **DMs always get a redirect draft** — never answer in DMs
+- **Wins always get celebrated** — quick congrats at minimum
+- **Your students flagged separately** from general community
 
 ## References
 
-- Playbook: [playbook.md](playbook.md)
+- Channel priority details and redirect templates: [playbook.md](playbook.md)
 - Resource manifest: [manifest.md](manifest.md)
